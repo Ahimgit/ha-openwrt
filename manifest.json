@@ -1,0 +1,10 @@
+{
+  "domain": "openwrt",
+  "name": "OpenWRT",
+  "version": "1.0.0",
+  "documentation": "https://github.com/ahimgit/ha-openwrt",
+  "requirements": ["aiohttp","voluptuous"],
+  "dependencies": [],
+  "codeowners": ["@ahimgit"],
+  "config_flow": true
+}

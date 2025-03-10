@@ -1,0 +1,2 @@
+NAME = "OpenWRT"
+DOMAIN = "openwrt"
