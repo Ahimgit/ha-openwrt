@@ -1,6 +1,6 @@
 # Home Assistant OpenWrt Integration
 
-Very WIP so far only support thermal and cpu (load ~ 1m) sensors.    
+Very WIP so far only supports thermal and cpu (load ~ 1m) sensors.    
 Uses [UBUS RPC](https://openwrt.org/docs/techref/ubus).   
 Create login/permissions to use:
 
@@ -9,7 +9,7 @@ uci add rpcd login
 uci set rpcd.@login[-1].username='ha'
 uci set rpcd.@login[-1].password='<crypt hash of yourpassword>'  # gen with "uhttpd -m yourpassword" 
 uci set rpcd.@login[-1].write='ha'
-uci add_list rpcd.@login[-1].read='unauthenticated'              # default role with permission to log in
+uci add_list rpcd.@login[-1].read='unauthenticated'              # default role with permission to log-in
 uci add_list rpcd.@login[-1].read='ha'                           # role for acl below
 uci commit rpcd
 
