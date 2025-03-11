@@ -37,11 +37,7 @@ class CpuSensor(SensorEntity):
         LOGGER.debug("lifecycle: cpusensor async_update")
         try:
             sysinfo = await self.sysinfo_api.get_system_info()
-            if sysinfo.load_1m:
-                self._attr_native_value = sysinfo.load_1m / 1000
-            else:
-                LOGGER.warning(f"Ubus system.info did not return cpu load info.")
-                self._attr_native_value = None
+            self._attr_native_value = sysinfo.load_1m / 1000
         except Exception:
             LOGGER.error(f"Failed to fetch cpu load from", exc_info=True)
             self._attr_native_value = None
